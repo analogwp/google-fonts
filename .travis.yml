@@ -1,0 +1,11 @@
+language: php
+php:
+- 7.2
+env:
+  global:
+  #- secure: 
+  #- secure: 
+  #- secure: 
+script:
+  - php run.php
+  - sh .travis_push.sh
