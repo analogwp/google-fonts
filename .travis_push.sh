@@ -16,8 +16,7 @@ commit_fonts_file() {
   # Create a new commit with a custom build message
   # with "[skip ci]" to avoid a build loop
   # and Travis build number for reference
-  git commit -m "Travis update: 
-  $dateAndMonth (Build $TRAVIS_BUILD_NUMBER)" -m "[skip ci]"
+  git commit -m "Travis update: $dateAndMonth (Build $TRAVIS_BUILD_NUMBER)" -m "[skip ci]"
 }
 
 upload_files() {
