@@ -9,6 +9,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      GOOGLEKEY: ${{ secrets.GOOGLEKEY }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -22,7 +24,6 @@ jobs:
         run: php run.php
 
       - uses: stefanzweifel/git-auto-commit-action@v4
-        env:
-          GOOGLEKEY: ${{ secrets.GOOGLEKEY }}
+
         with:
           commit_message: Update fonts
