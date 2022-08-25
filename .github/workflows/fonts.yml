@@ -1,0 +1,25 @@
+name: Update fonts
+
+on:
+  push:
+    # At 01:00.
+    - cron: 0 1 * * * 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+
+      - name: Fetch fonts
+        run: php run.php
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update fonts

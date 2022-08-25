@@ -2,9 +2,6 @@
 
 date_default_timezone_set( 'UTC' );
 
-$output = shell_exec( 'git log -1' );
-echo shell_exec( 'git checkout -f main' );
-
 $arrContextOptions = array(
 	"ssl" => array(
 		"verify_peer"      => false,
